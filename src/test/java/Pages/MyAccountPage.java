@@ -33,7 +33,7 @@ public class MyAccountPage extends BasePage {
     private IOSElement btnSave;
 
     public void account() throws InterruptedException, Exception {
-        _wait(5);
+        _wait(3);
         clickElementByiOSNsPredicateString(driver, iosPredicableBtnMyAccount);
         _wait(2);
     }
@@ -59,7 +59,7 @@ public class MyAccountPage extends BasePage {
     }
 
     public void out() throws InterruptedException, Exception {
-        scrollByRange(driver, 0.5, 0.8, 0.5, 0.3);
+        scrollByRange(driver, 0.5, 0.6, 0.5, 0.5);
         clickElementByiOSNsPredicateString(driver, iosPredicableBtnOut);
         _wait(2);
         clickElementByiOSNsPredicateString(driver, iosPredicableBtnCanceled);
@@ -68,7 +68,6 @@ public class MyAccountPage extends BasePage {
         _wait(2);
         //clickElementByiOSNsPredicateString(driver, iosPredicableBtnAccept);
         //_wait(5);
-
     }
 
 }

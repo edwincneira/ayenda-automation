@@ -19,34 +19,26 @@ public class MyTravelsPage extends BasePage {
     String iosPredicableBtnCanceledTravels = "name CONTAINS 'Cancelados' AND accessible == true";
     String iosPredicableBtnReserve = "name CONTAINS 'Reserva ya' AND accessible == true";
 
-    public void actualTravels() throws Exception{
+    public void baseNavigator(String section) throws Exception {
         clickElementByiOSNsPredicateString(driver, iosPredicableBtnMyTravel);
         _wait(1);
-        clickElementByiOSNsPredicateString(driver, iosPredicableBtnActualTravels);
+        clickElementByiOSNsPredicateString(driver, section);
         _wait(1);
-        scrollByRange(driver, 0.5, 0.8, 0.5, 0.3);
+        scrollByRange(driver, 0.5, 0.6, 0.5, 0.4);
         clickElementByiOSNsPredicateString(driver, iosPredicableBtnReserve);
         _wait(1);
+    }
+
+    public void actualTravels() throws Exception{
+        baseNavigator(iosPredicableBtnActualTravels);
     }
 
     public void completedTravels() throws Exception {
-        clickElementByiOSNsPredicateString(driver, iosPredicableBtnMyTravel);
-        _wait(1);
-        clickElementByiOSNsPredicateString(driver, iosPredicableBtnCompletedTravels);
-        _wait(1);
-        scrollByRange(driver, 0.5, 0.8, 0.5, 0.3);
-        clickElementByiOSNsPredicateString(driver, iosPredicableBtnReserve);
-        _wait(1);
+        baseNavigator(iosPredicableBtnCompletedTravels);
     }
 
     public void canceledTravels() throws Exception{
-        clickElementByiOSNsPredicateString(driver, iosPredicableBtnMyTravel);
-        _wait(1);
-        clickElementByiOSNsPredicateString(driver, iosPredicableBtnCanceledTravels);
-        _wait(1);
-        scrollByRange(driver, 0.5, 0.8, 0.5, 0.3);
-        clickElementByiOSNsPredicateString(driver, iosPredicableBtnReserve);
-        _wait(3);
+        baseNavigator(iosPredicableBtnCanceledTravels);
     }
 
 }

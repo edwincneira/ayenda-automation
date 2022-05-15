@@ -10,12 +10,15 @@ import static Utils.FindElement.*;
 import static Utils.Scroll.scroll;
 import static Utils.Time._wait;
 import static Utils.Tap.tapByCoordinates;
+import static Utils.Constans.*;
 
 public class SelectCityPage extends BasePage {
 
     public SelectCityPage(IOSDriver<IOSElement> driver){
         super(driver);
     }
+
+    ReservePage reserve = new ReservePage(driver);
 
     @FindBy(xpath = "//XCUIElementTypeOther[@name=\"\uF505 Busca hoteles, barrios o puntos de referencia \uF223\"]")
     private IOSElement btnSearchPointsReference;
@@ -25,23 +28,25 @@ public class SelectCityPage extends BasePage {
 
     public void selectCity(String city) throws InterruptedException, Exception {
         String element = String.format(iosPredicableScreenCity, city);
-        _wait(5);
+        _wait(3);
         int i=0;
         while(!isVisibleElementsByiOSNsPredicateString(driver, element)){
-            scroll(driver, 348, 264, 219, 262);
+            scroll(driver, 348, 264, 160, 264);
             if(i==40) break;
             i++;
         }
         IOSElement btnCity = elementsByiOSNsPredicateString(driver, element);
         Point coordinates = btnCity.getLocation();
-        int _x = coordinates.getX() + 10;
-        int _y = coordinates.getY() + 10;
+        int _x = coordinates.getX() + 8;
+        int _y = coordinates.getY() - 8;
         tapByCoordinates(_x, _y, driver);
-        _wait(2);
+        _wait(1);
+        reserve.howPerson(1, 1);
+        reserve.orderBy(QUALIFICATION);
     }
 
     public void searchCity(String city) throws Exception, InterruptedException {
-        _wait(5);
+        _wait(3);
         btnSearchPointsReference.click();
         _wait(1);
         btnSearchPointsReference.click();
@@ -49,5 +54,7 @@ public class SelectCityPage extends BasePage {
         _wait(2);
         clickElementByXpath(driver, String.format(xpathBtnCity, city));
         _wait(2);
+        reserve.howPerson(1, 2);
+        reserve.orderBy(MORE_SEARCH);
     }
 }
