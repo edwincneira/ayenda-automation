@@ -5,8 +5,6 @@ import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.MissingFormatArgumentException;
-
 import static Utils.CicleClick.click;
 import static Utils.Constans.*;
 import static Utils.Constans.PRICE_MORE_LESS;
@@ -20,9 +18,11 @@ public class ReservePage extends BasePage {
         super(driver);
     }
 
+    //ByIosPredicableString
     String iosPredicableBtnReserve = "name CONTAINS 'Reserva' AND accessible == true";
     String iosPredicableBtnOrders = "name CONTAINS '%s' AND accessible == true";
 
+    //By Xpath
     @FindBy(xpath = "//XCUIElementTypeButton[@name=\"Continúa y selecciona las fechas\"]")
     private IOSElement btnContinueDates;
 
@@ -57,26 +57,21 @@ public class ReservePage extends BasePage {
     }
 
     public void orderBy(String order) throws InterruptedException, Exception {
-        _wait(3);
-        try {
-            btnOrder.click();
-        } catch (MissingFormatArgumentException e) {
-            _wait(1);
-            btnOrder.click();
-        }
         _wait(2);
+        btnOrder.click();
+        _wait(1);
         switch (order){
             case QUALIFICATION:
-                clickElementByiOSNsPredicateString(driver, "name CONTAINS 'Calificación' AND accessible == true");
+                clickElementByiOSNsPredicateString(driver, String.format(iosPredicableBtnOrders, QUALIFICATION));
                 break;
             case MORE_SEARCH:
-                clickElementByiOSNsPredicateString(driver, "name CONTAINS 'Los más buscados' AND accessible == true");
+                clickElementByiOSNsPredicateString(driver, String.format(iosPredicableBtnOrders, MORE_SEARCH));
                 break;
             case PRICE_LESS_MORE:
-                clickElementByiOSNsPredicateString(driver, "name CONTAINS 'Precio de mayor a menor' AND accessible == true");
+                clickElementByiOSNsPredicateString(driver, String.format(iosPredicableBtnOrders, PRICE_LESS_MORE));
                 break;
             case PRICE_MORE_LESS:
-                clickElementByiOSNsPredicateString(driver, "name CONTAINS 'Precio de menor a mayor' AND accessible == true");
+                clickElementByiOSNsPredicateString(driver, String.format(iosPredicableBtnOrders, PRICE_MORE_LESS));
                 break;
             default:
                 System.out.println("Don't exist the order");

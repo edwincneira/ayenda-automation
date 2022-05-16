@@ -10,7 +10,7 @@ public class Capabilities {
         capabilities.setCapability("platformVersion", version);
         capabilities.setCapability("udid", serialName);
         capabilities.setCapability("deviceName", deviceName);
-        capabilities.setCapability("bundleId", "com.ayendaapp"); //com.merqueo.user.ios.Merqueo com.ayendaapp
+        capabilities.setCapability("bundleId", "com.ayendaapp");  //com.merqueo.user.ios.Merqueo com.ayendaapp
         capabilities.setCapability("automationName", "XCUITest");
         capabilities.setCapability("newCommandTimeout", "95000");
         return capabilities;

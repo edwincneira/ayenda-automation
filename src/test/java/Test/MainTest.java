@@ -17,7 +17,7 @@ public class MainTest extends Base{
         driver.launchApp();
     }
 
-    @Test
+    @Test(priority = 1)
     public void account() throws InterruptedException, Exception{
         MyAccountPage account = new MyAccountPage(driver);
         account.account();
@@ -25,7 +25,7 @@ public class MainTest extends Base{
         account.out();
     }
 
-    @Test
+    @Test(priority = 2)
     public void travels() throws Exception {
         MyTravelsPage travel = new MyTravelsPage(driver);
         travel.actualTravels();
@@ -33,7 +33,7 @@ public class MainTest extends Base{
         travel.canceledTravels();
     }
 
-    @Test
+    @Test(priority = 3)
     public void reserve() throws Exception {
         SelectCityPage select = new SelectCityPage(driver);
         ReservePage reserve = new ReservePage(driver);
@@ -42,7 +42,7 @@ public class MainTest extends Base{
         reserve.orderBy(PRICE_MORE_LESS);
     }
 
-    @Test(priority = 1)
+    @Test(priority = 4)
     public static void search() throws InterruptedException, Exception{
         SelectCityPage select = new SelectCityPage(driver);
         select.searchCity("Medellín");

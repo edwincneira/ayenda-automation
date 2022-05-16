@@ -13,6 +13,7 @@ public class MyTravelsPage extends BasePage {
         super(driver);
     }
 
+    //ByIosPredicableString
     String iosPredicableBtnMyTravel = "name CONTAINS 'Mis Viajes' AND accessible == true";
     String iosPredicableBtnActualTravels = "name CONTAINS 'Actuales' AND accessible == true";
     String iosPredicableBtnCompletedTravels = "name CONTAINS 'Finalizados' AND accessible == true";

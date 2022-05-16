@@ -15,11 +15,14 @@ public class MyAccountPage extends BasePage {
     public MyAccountPage (IOSDriver<IOSElement> driver) {
         super(driver);
     }
+
+    //ByIosPredicableString
     String iosPredicableBtnMyAccount = "name CONTAINS 'Mi Cuenta' AND accessible == true";
     String iosPredicableBtnOut = "name CONTAINS 'Cerrar Sesión' AND accessible == true AND enabled == true";
     String iosPredicableBtnCanceled = "name CONTAINS 'Cancelar' AND accessible == true AND enabled == true";
     String iosPredicableBtnAccept = "name CONTAINS 'Aceptar' AND accessible == true AND enabled == true";
 
+    //By Xpath
     @FindBy(xpath = "//XCUIElementTypeOther[@name=\"\uF044 Editar perfil\"]")
     private IOSElement btnEditProfile;
 
@@ -66,8 +69,6 @@ public class MyAccountPage extends BasePage {
         _wait(2);
         clickElementByiOSNsPredicateString(driver, iosPredicableBtnOut);
         _wait(2);
-        //clickElementByiOSNsPredicateString(driver, iosPredicableBtnAccept);
-        //_wait(5);
     }
 
 }

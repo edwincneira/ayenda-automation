@@ -7,7 +7,11 @@ import io.appium.java_client.touch.offset.PointOption;
 
 public class Tap {
 
-    public static void tapByCoordinates(int x, int y, IOSDriver<IOSElement> driver) {
+    public static void tapByCoordinates(
+            int x,
+            int y,
+            IOSDriver<IOSElement> driver)
+    {
         new TouchAction(driver).tap(PointOption.point(x,y)).release().perform();
     }
 

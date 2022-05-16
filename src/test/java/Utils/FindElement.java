@@ -37,7 +37,6 @@ public class FindElement {
         return driver.findElement(By.className("Nothing"));
     }
 
-
     public static boolean isVisibleElementByiOSNsPredicateString (IOSDriver<IOSElement> driver, String search) throws Exception {
         try {
             if(driver.findElement(MobileBy.iOSNsPredicateString(search)).isDisplayed()) return true;
@@ -57,5 +56,4 @@ public class FindElement {
         }
         return false;
     }
-
 }

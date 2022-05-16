@@ -16,13 +16,18 @@ public class Base{
 
     public static IOSDriver<IOSElement> driver;
 
+    public static String DEVICE_NAME = "iPhone X";
+    public static String SERIAL_NAME = "5a40a9ebbdc4e527bdbfe2bd686b6184615e759e";
+    public static String VERSION_IPHONE = "12.0";
+
     @BeforeSuite(alwaysRun = true)
     public static void setup() throws MalformedURLException {
         URL url = new URL("http://127.0.0.1:4725/wd/hub");
-        DesiredCapabilities capabilitiesIos = Capabilities.get_capabilities_ios("iPhone X", "5a40a9ebbdc4e527bdbfe2bd686b6184615e759e", "12.0");
+        DesiredCapabilities capabilitiesIos = Capabilities.get_capabilities_ios(DEVICE_NAME, SERIAL_NAME, VERSION_IPHONE);
+        System.out.println("Inicializando Driver");
         driver = new IOSDriver<IOSElement>(url, capabilitiesIos);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        System.out.println("Iniciando Driver");
+        System.out.println("Id Sessión, Ayenda App: " + driver.getSessionId());
     }
 
     @AfterMethod(alwaysRun = true)

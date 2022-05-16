@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class MyTravelsTest extends Base{
 
     @Test(priority = 1, groups = {"navigation"})
-    public void test() throws Exception {
+    public void navigateTravels() throws Exception {
         MyTravelsPage travel = new MyTravelsPage(driver);
         travel.actualTravels();
         travel.completedTravels();

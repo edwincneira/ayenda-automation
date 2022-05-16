@@ -1,6 +1,5 @@
 package Test;
 
-import Test.Base;
 import Pages.SelectCityPage;
 import org.testng.annotations.*;
 

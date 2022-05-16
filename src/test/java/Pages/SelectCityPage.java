@@ -20,11 +20,13 @@ public class SelectCityPage extends BasePage {
 
     ReservePage reserve = new ReservePage(driver);
 
-    @FindBy(xpath = "//XCUIElementTypeOther[@name=\"\uF505 Busca hoteles, barrios o puntos de referencia \uF223\"]")
-    private IOSElement btnSearchPointsReference;
-
+    //ByIosPredicableString
     String iosPredicableScreenCity = "label CONTAINS '%s' AND accessible == false AND enabled == true AND visible == true AND index == 1";
     String xpathBtnCity = "(//XCUIElementTypeOther[@name=\"%s\"])[3]";
+
+    //By Xpath
+    @FindBy(xpath = "//XCUIElementTypeOther[@name=\"\uF505 Busca hoteles, barrios o puntos de referencia \uF223\"]")
+    private IOSElement btnSearchPointsReference;
 
     public void selectCity(String city) throws InterruptedException, Exception {
         String element = String.format(iosPredicableScreenCity, city);
