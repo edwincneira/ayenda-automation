@@ -26,19 +26,23 @@ public class SelectCityTest extends  Base{
         };
     }
 
-    @Test(priority = 2, groups = {"city", "search"})
+    @Test(priority = 1, groups = {"city", "search"})
     public void searchTheCity() throws InterruptedException, Exception{
         SelectCityPage select = new SelectCityPage(driver);
-        System.out.println(city);
         select.searchCity(city);
         _wait(1);
     }
-    @Test(priority = 1, groups = {"city", "select"})
+    @Test(priority = 2, groups = {"city", "select"})
     public void selectTheCity() throws InterruptedException, Exception{
         SelectCityPage select = new SelectCityPage(driver);
-        System.out.println(city);
         select.selectCity(city);
         _wait(1);
     }
 
 }
+
+
+
+
+
+
