@@ -20,7 +20,7 @@
 ## Iniciar el proyecto
 
 ---
-#### ***Iniciar el servidor local de appium***
+#### ***Iniciar el servidor local de Appium***
 
 `$ appium -p 4725`
 
@@ -28,10 +28,10 @@
 #### ***En el archivo de Java `src/test/java/Test/Base.java` ingresar los datos de tu dispositivo***
 
 ---
-#### ***Ahora puedes ejecutar el archivo testng.xml que se encuentra en la raiz del proyecto*** ✌ 
+#### ***Ahora puedes ejecutar el archivo testng.xml que se encuentra en la raíz del proyecto*** ✌ 
 
 
 # Dudas
 
-Si tienes una duda sea acerca del codigo puedes hacer la pregunta al siguiente correo ***eachivatan@correo.udistrital.edu.co*** con el asunto 
+Si tienes una duda acerca del código puedes hacer la pregunta al siguiente correo ***eachivatan@correo.udistrital.edu.co*** con el asunto 
 ***Duda Automatización*** 💪
